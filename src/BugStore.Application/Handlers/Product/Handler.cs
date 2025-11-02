@@ -50,7 +50,7 @@ public class Handler(IAppDbContext context) : IProductHandle
             Title = request.Title,
             Description = request.Description,
             Price = request.Price,
-            Slug = GenerateSlug(request.Title)
+            // Slug = GenerateSlug(request.Title)
         };
 
         await context.Products.AddAsync(product);
@@ -69,7 +69,7 @@ public class Handler(IAppDbContext context) : IProductHandle
         product.Title = request.Title;
         product.Description = request.Description;
         product.Price = request.Price;
-        product.Slug = GenerateSlug(request.Title);
+        // product.Slug = GenerateSlug(request.Title);
 
         context.Products.Update(product);
         await context.SaveChangesAsync(cancellationToken);
@@ -89,12 +89,12 @@ public class Handler(IAppDbContext context) : IProductHandle
         return Results.NoContent();
     }
     
-    private static string GenerateSlug(string text)
-    {
-        var slug = text.ToLowerInvariant();
-        slug = Regex.Replace(slug, @"[^a-z0-9\s-]", "");
-        slug = Regex.Replace(slug, @"\s+", " ").Trim();
-        slug = Regex.Replace(slug, @"\s", "-");
-        return slug;
-    }
+    // private static string GenerateSlug(string text)
+    // {
+    //     var slug = text.ToLowerInvariant();
+    //     slug = Regex.Replace(slug, @"[^a-z0-9\s-]", "");
+    //     slug = Regex.Replace(slug, @"\s+", " ").Trim();
+    //     slug = Regex.Replace(slug, @"\s", "-");
+    //     return slug;
+    // }
 }

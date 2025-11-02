@@ -18,7 +18,8 @@ public class Handler(IAppDbContext context) : ICustomerHandler
                 Name = c.Name,
                 Email = c.Email,
                 BirthDate = c.BirthDate,
-                Phone = c.Phone
+                Phone = c.Phone,
+                Age = c.Age
             })
             .ToListAsync();
         

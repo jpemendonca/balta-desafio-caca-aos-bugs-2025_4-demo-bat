@@ -31,4 +31,8 @@
         <Using Include="Xunit"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\BugStore.Domain\BugStore.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

@@ -7,4 +7,5 @@ public class Get
     public string Email { get; set; } = string.Empty;
     public string Phone { get; set; } = string.Empty;
     public DateTime BirthDate { get; set; }
+    public int Age { get; set; }
 }

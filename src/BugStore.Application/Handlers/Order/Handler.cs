@@ -20,7 +20,8 @@ public class Handler(IAppDbContext context) : IOrderHandle
                 CustomerId = o.CustomerId,
                 CustomerName = o.Customer.Name,
                 CreatedAt = o.CreatedAt,
-                TotalOrderValue = o.Lines.Sum(l => l.Total),
+                Total = o.Total,
+                // TotalOrderValue = o.Lines.Sum(l => l.Total),
                 Lines = o.Lines.Select(l => new Responses.Orders.OrderLineResponse
                 {
                     ProductId = l.ProductId,
