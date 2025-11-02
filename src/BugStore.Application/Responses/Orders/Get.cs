@@ -1,6 +1,6 @@
-namespace BugStore.Application.Responses.Orders;
+﻿namespace BugStore.Application.Responses.Orders;
 
-public class GetById
+public class Get
 {
     public Guid Id { get; set; }
     public Guid CustomerId { get; set; }
